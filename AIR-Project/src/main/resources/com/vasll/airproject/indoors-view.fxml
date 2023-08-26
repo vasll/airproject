@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="680.0" prefHeight="620.0" prefWidth="940.0" styleClass="background" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vasll.airproject.Controllers.ControllerIndoors">
+   <center>
+      <BorderPane prefHeight="288.0" prefWidth="930.0" styleClass="paneThing" BorderPane.alignment="CENTER">
+         <top>
+            <AnchorPane prefHeight="39.0" prefWidth="1025.0" styleClass="paneTitleBar" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="6.0" layoutY="-1.0" styleClass="labelHard" text="Chart">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btn24Samples" layoutX="806.0" layoutY="5.0" mnemonicParsing="false" onAction="#setSamples24" styleClass="borderButtonRight" text="24 SAMPLES" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn12Samples" layoutX="711.0" layoutY="5.0" mnemonicParsing="false" onAction="#setSamples12" styleClass="borderButtonLeft" text="12 SAMPLES" AnchorPane.rightAnchor="95.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="-5.0" />
+               </padding>
+            </AnchorPane>
+         </top>
+         <BorderPane.margin>
+            <Insets bottom="6.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="-5.0" left="5.0" right="5.0" />
+         </padding>
+         <center>
+            <LineChart fx:id="lineChart" styleClass="lineChart" BorderPane.alignment="CENTER">
+              <xAxis>
+                 <CategoryAxis animated="false" styleClass="lineChartAxis" tickLabelGap="0.0" tickLength="0.0" fx:id="xAxis" />
+              </xAxis>
+               <yAxis>
+                  <NumberAxis fx:id="yAxis" side="LEFT" styleClass="lineChartAxis" />
+              </yAxis>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" />
+               </BorderPane.margin>
+            </LineChart>
+         </center>
+      </BorderPane>
+   </center>
+   <padding>
+      <Insets bottom="11.0" left="8.0" right="8.0" top="14.0" />
+   </padding>
+   <bottom>
+      <BorderPane prefHeight="35.0" prefWidth="940.0" styleClass="paneThing" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="5.0" right="5.0" />
+         </BorderPane.margin>
+         <right>
+            <Label fx:id="lblArduinoStatus" styleClass="labelStatusArduino" text="Arduino Status: Disconnected" textFill="RED" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets right="4.0" />
+               </padding>
+            </Label>
+         </right>
+         <left>
+            <AnchorPane prefHeight="33.0" prefWidth="319.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ComboBox fx:id="comboBoxPorts" layoutX="37.0" layoutY="3.0" onAction="#setCurrentPortAndListenArduino" prefHeight="27.0" prefWidth="250.0" styleClass="comboBox" />
+                  <Label layoutX="-1.0" layoutY="3.0" styleClass="labelHard" text="Port:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnRefresh" layoutX="288.0" layoutY="2.0" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#loadSerialPorts" prefHeight="30.0" styleClass="refreshButton">
+                     <graphic>
+                        <FontIcon scaleX="2.0" scaleY="2.0" style="-fx-icon-code: mdi-refresh;" styleClass="icons" />
+                     </graphic>
+                  </Button>
+               </children>
+               <BorderPane.margin>
+                  <Insets left="3.0" right="3.0" />
+               </BorderPane.margin>
+            </AnchorPane>
+         </left>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="8.0" right="8.0" />
+         </padding>
+      </BorderPane>
+   </bottom>
+   <top>
+      <BorderPane prefHeight="290.0" prefWidth="914.0" styleClass="paneThing" BorderPane.alignment="CENTER">
+         <top>
+            <AnchorPane prefHeight="41.0" prefWidth="907.0" styleClass="paneTitleBar" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="textFieldRoomName" layoutX="6.0" layoutY="1.0" onAction="#setRoomName" prefHeight="39.0" prefWidth="360.0" styleClass="textField" text="Room">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-6.0" top="-6.0" />
+                     </padding>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets bottom="-5.0" />
+               </padding>
+            </AnchorPane>
+         </top>
+         <center>
+            <GridPane hgap="3.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <VBox alignment="CENTER" onMousePressed="#switchToHumidityChart" prefHeight="200.0" prefWidth="100.0" styleClass="dataBox">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="135.0" styleClass="labelHard" text="Humidity" textAlignment="CENTER">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="-10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="lblHUM" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" prefHeight="69.0" prefWidth="309.0" text="N/A" textAlignment="CENTER" textFill="#c9c9c9">
+                           <font>
+                              <Font name="System Bold" size="47.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="1.0" top="1.0" />
+                           </padding>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="133.0" styleClass="labelSoft" text="Percentage" textAlignment="CENTER" textFill="#8a8a8a">
+                           <font>
+                              <Font name="System Italic" size="22.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="-10.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="8.0" />
+                           </padding>
+                        </Label>
+                        <FontIcon fx:id="humidityIcon" iconColor="GREY" scaleX="3.0" scaleY="3.0" style="-fx-icon-code: mdi-water;">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </FontIcon>
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </VBox>
+                  <VBox alignment="CENTER" onMousePressed="#switchToTemperatureChart" prefHeight="200.0" prefWidth="100.0" styleClass="dataBox" GridPane.columnIndex="1">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="271.0" styleClass="labelHard" text="Temperature" textAlignment="CENTER">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="-10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="lblTMP" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" prefHeight="69.0" prefWidth="286.0" text="N/A" textAlignment="CENTER" textFill="#c9c9c9">
+                           <font>
+                              <Font name="System Bold" size="47.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="1.0" top="1.0" />
+                           </padding>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="428.0" styleClass="labelSoft" text="Celsius" textAlignment="CENTER" textFill="#8a8a8a">
+                           <font>
+                              <Font name="System Italic" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="-10.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="8.0" />
+                           </padding>
+                        </Label>
+                        <FontIcon fx:id="tempIcon" iconColor="GREY" scaleX="3.0" scaleY="3.0" style="-fx-icon-code: mdi-thermometer;">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </FontIcon>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" onMousePressed="#switchToCO2Chart" prefHeight="200.0" prefWidth="100.0" styleClass="dataBox" GridPane.columnIndex="2">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="271.0" styleClass="labelHard" text="CO2" textAlignment="CENTER">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="-10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="lblCO2" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" prefHeight="69.0" prefWidth="253.0" text="N/A" textAlignment="CENTER" textFill="#c9c9c9">
+                           <font>
+                              <Font name="System Bold" size="47.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="1.0" top="1.0" />
+                           </padding>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="428.0" styleClass="labelSoft" text="PPM" textAlignment="CENTER" textFill="#8a8a8a">
+                           <font>
+                              <Font name="System Italic" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="-10.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="8.0" />
+                           </padding>
+                        </Label>
+                        <FontIcon iconColor="GREY" scaleX="3.0" scaleY="3.0" style="-fx-icon-code: mdi-chart-bubble;">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </FontIcon>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" onMousePressed="#switchToAirQualityChart" prefHeight="200.0" prefWidth="100.0" styleClass="dataBox" GridPane.columnIndex="3">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="271.0" styleClass="labelHard" text="Air quality" textAlignment="CENTER">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="-10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="lblQuality" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" prefHeight="69.0" prefWidth="255.0" text="N/A" textAlignment="CENTER" textFill="#c9c9c9">
+                           <font>
+                              <Font name="System Bold" size="47.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="1.0" top="1.0" />
+                           </padding>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="428.0" styleClass="labelSoft" text="Overall (AQI)" textAlignment="CENTER" textFill="GREY">
+                           <font>
+                              <Font name="System Italic" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="-10.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="8.0" />
+                           </padding>
+                        </Label>
+                        <FontIcon iconColor="GREY" scaleX="3.0" scaleY="3.0" style="-fx-icon-code: mdi-weather-windy;">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </FontIcon>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="8.0" right="8.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </GridPane>
+         </center>
+         <padding>
+            <Insets bottom="4.0" left="5.0" right="5.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" />
+         </BorderPane.margin>
+      </BorderPane>
+   </top>
+</BorderPane>

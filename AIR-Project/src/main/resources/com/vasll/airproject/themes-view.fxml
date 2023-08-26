@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="640.0" minWidth="896.0" prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vasll.airproject.Controllers.ControllerThemes">
+   <padding>
+      <Insets bottom="11.0" left="13.0" right="8.0" top="14.0" />
+   </padding>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="91.0" prefWidth="479.0" styleClass="paneThing">
+               <children>
+                  <RadioButton fx:id="radioButtonLight" layoutX="113.0" mnemonicParsing="false" onAction="#switchToLightTheme" prefHeight="86.0" prefWidth="384.0" styleClass="radioButton" text="Light">
+                     <font>
+                        <Font size="45.0" />
+                     </font>
+                  </RadioButton>
+                  <FontIcon iconSize="64" layoutX="14.0" layoutY="67.0" style="-fx-icon-code: mdi-weather-sunny;" styleClass="icons" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="55.0" prefWidth="875.0" styleClass="paneThing">
+               <children>
+                  <RadioButton fx:id="radioButtonDark" layoutX="113.0" mnemonicParsing="false" onAction="#switchToDarkTheme" prefHeight="86.0" prefWidth="384.0" styleClass="radioButton" text="Dark">
+                     <font>
+                        <Font size="45.0" />
+                     </font>
+                  </RadioButton>
+                  <FontIcon iconSize="64" layoutX="14.0" layoutY="67.0" style="-fx-icon-code: mdi-weather-night;" styleClass="icons" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <BorderPane prefHeight="9999.0" prefWidth="9999.0" styleClass="paneThing">
+               <top>
+                  <AnchorPane prefHeight="55.0" prefWidth="875.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <RadioButton fx:id="radioButtonCustom" layoutX="113.0" mnemonicParsing="false" onAction="#switchToCustomTheme" prefHeight="86.0" prefWidth="384.0" styleClass="radioButton" text="Custom">
+                           <font>
+                              <Font size="45.0" />
+                           </font>
+                        </RadioButton>
+                        <FontIcon iconSize="64" layoutX="14.0" layoutY="67.0" style="-fx-icon-code: mdi-settings;" styleClass="icons" />
+                        <Label layoutX="561.0" layoutY="28.0" prefHeight="31.0" prefWidth="308.0" styleClass="labelHard" text="(Requires restart if colors are changed)" AnchorPane.rightAnchor="14.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </AnchorPane>
+               </top>
+               <center>
+                  <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="9999.0" prefWidth="9999.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" styleClass="labelHard" text="Accent">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ColorPicker fx:id="colorPickerAccent" onAction="#refreshAccent" prefHeight="46.0" prefWidth="210.0" styleClass="color-picker">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ColorPicker>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="9999.0" prefWidth="9999.0" GridPane.columnIndex="1">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" styleClass="labelHard" text="Accent (hard)">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ColorPicker fx:id="colorPickerAccentHard" onAction="#refreshAccentHard" prefHeight="46.0" prefWidth="210.0" styleClass="color-picker">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ColorPicker>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="9999.0" prefWidth="9999.0" GridPane.columnIndex="2">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" styleClass="labelHard" text="Hover">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ColorPicker fx:id="colorPickerHover" onAction="#refreshHover" prefHeight="46.0" prefWidth="210.0" styleClass="color-picker">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ColorPicker>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="9999.0" prefWidth="9999.0" GridPane.rowIndex="1">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" styleClass="labelHard" text="Primary">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ColorPicker fx:id="colorPickerPrimary" onAction="#refreshPrimary" prefHeight="46.0" prefWidth="210.0" styleClass="color-picker">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ColorPicker>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="9999.0" prefWidth="9999.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" styleClass="labelHard" text="Primary (light)">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ColorPicker fx:id="colorPickerPrimaryLight" onAction="#refreshPrimaryLight" prefHeight="46.0" prefWidth="210.0" styleClass="color-picker">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ColorPicker>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="9999.0" prefWidth="9999.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" styleClass="labelHard" text="Background">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ColorPicker fx:id="colorPickerBackground" onAction="#refreshBackground" prefHeight="46.0" prefWidth="210.0" styleClass="color-picker">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ColorPicker>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="9999.0" prefWidth="9999.0" GridPane.rowIndex="2">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" styleClass="labelHard" text="On Primary">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ColorPicker fx:id="colorPickerOnPrimary" onAction="#refreshOnPrimary" prefHeight="46.0" prefWidth="210.0" styleClass="color-picker">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ColorPicker>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="9999.0" prefWidth="9999.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" styleClass="labelHard" text="On primary (light)">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ColorPicker fx:id="colorPickerOnPrimaryLight" onAction="#refreshOnPrimaryLight" prefHeight="46.0" prefWidth="210.0" styleClass="color-picker">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ColorPicker>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="9999.0" prefWidth="9999.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" styleClass="labelHard" text="Background(hard)">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ColorPicker fx:id="colorPickerBackgroundHard" onAction="#refreshBackgroundHard" prefHeight="46.0" prefWidth="210.0" styleClass="color-picker">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ColorPicker>
+                           </children>
+                        </VBox>
+                     </children>
+                  </GridPane>
+               </center>
+            </BorderPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

@@ -1,0 +1,277 @@
+/* CUSTOM THEME */
+
+
+/* Theme colors */
+*{
+    accent-color:#80B380;
+    accent-color-hard:#4D804D;
+    primary-color:#1c2632;
+    primary-color-light:#2f3e51;
+    on-primary-color:#ffffff;
+    on-primary-color-light:#999999;
+    background-color:#151c24;
+    background-color-hard:#10151b;
+    hover-color:#293D56;
+    light-shadow: dropshadow(three-pass-box, primary-color, 3, 0, 0, 0);
+}
+/* Combo Box */
+.comboBox{
+    -fx-background-color: primary-color;
+    -fx-border-color: primary-color-light;
+    -fx-border-width: 1;
+    -fx-border-radius: 1;
+}
+
+.comboBox > .list-cell {
+    -fx-text-fill: on-primary-color;
+}
+
+
+/* Text Field */
+.textField{
+    -fx-background-color: primary-color;
+    -fx-text-fill: on-primary-color;
+}
+
+.textField2{
+    -fx-background-color: primary-color;
+    -fx-text-fill: on-primary-color;
+    -fx-border-color: on-primary-color;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+/* Color Picker */
+.color-picker{
+    -fx-background-color: primary-color;
+    -fx-border-color: on-primary-color; 
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.color-picker .label{
+    -fx-text-fill: on-primary-color;
+    -fx-font-size: 15;
+}
+
+/* Labels */
+.labelHard{
+    -fx-text-fill: on-primary-color;
+}
+
+
+/* Icons */
+.icons{
+    -fx-fill: on-primary-color;
+}
+
+.iconsAccent{
+    -fx-fill: accent-color;
+}
+
+.iconsAccent: hover{
+    -fx-fill: primary-color;
+}
+
+/* RadioButton */
+.radio-button{
+    -fx-text-fill: on-primary-color;
+}
+
+.radio-button .radio {
+    -fx-border-width: 1px;
+    -fx-border-color: on-primary-color;
+    -fx-background-color: background-color;
+    -fx-background-image: null;
+    -fx-border-radius: 30px;
+    -fx-background-radius: 30px;
+    -fx-padding: 8;
+}
+
+.radio-button .dot{
+    -fx-mark-highlight-color: on-primary-color;
+    -fx-mark-color: on-primary-color;
+    -fx-border-radius: 0;
+}
+
+/* Buttons */
+.refreshButton{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-fill: on-primary-color;
+}
+
+.dashboardButton {
+    -fx-border-width: 0;
+    -fx-text-fill: accent-color;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: primary-color;
+}
+
+.dashboardButton: hover {
+    -fx-text-fill: primary-color;
+    -fx-background-color: accent-color;
+}
+
+.dashboardButton: pressed {
+    -fx-text-fill: primary-color;
+    -fx-background-color: accent-color-hard;
+}
+
+.borderButtonLeft {
+    -fx-background-color: primary-color;
+    -fx-border-width: 0 1 0 0;
+    -fx-border-radius: 2;
+    -fx-border-color: background-color-hard;
+    -fx-text-fill: on-primary-color;
+}
+
+.borderButtonLeft: hover {
+    -fx-background-color: hover-color;
+}
+
+.borderButtonRight {
+    -fx-background-color: primary-color;
+    -fx-border-width: 0 0 0 1;
+    -fx-border-radius: 2;
+    -fx-border-color: background-color-hard;
+    -fx-text-fill: on-primary-color;
+}
+
+.borderButtonRight: hover {
+    -fx-background-color: hover-color;
+}
+
+
+/* Title & Bottom Bar */
+.bottomBar {
+    -fx-background-color: primary-color;
+}
+
+.titleBar {
+    -fx-background-color: primary-color;
+}
+
+.titleBarTitle {
+    -fx-text-fill: accent-color;
+}
+
+
+/* Panes */
+.paneThing {
+    -fx-border-color: primary-color-light;
+    -fx-border-radius: 2;
+    -fx-background-radius: 2;
+    -fx-background-color: primary-color;
+    -fx-effect: light-shadow;
+}
+
+.paneTitleBar{
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: background-color-hard;
+}
+
+.dashboardOutline{
+    -fx-border-width: 0 0 0 0;
+}
+
+
+/* Custom & MISC */
+.dataBox{
+    -fx-border-color: background-color-hard;
+    -fx-background-color: primary-color;
+    -fx-border-width: 0;
+    -fx-border-radius: 2;
+    -fx-background-radius: 2;
+}
+
+.dataBox: hover{
+    -fx-background-color: hover-color;
+}
+
+.background {
+    -fx-background-color: background-color;
+}
+
+.mapFrame {
+    -fx-background-color: background-color;
+    -fx-border-radius: 2;
+    -fx-background-radius: 2;
+}
+
+/* Line Chart */
+.chart-legend {
+    -fx-background-color:  background-color;
+    -fx-stroke: #FFFFFF;
+    -fx-text-fill: #FFFFFF;
+ }
+
+.lineChart {
+    -fx-background-color: primary-color;
+    -fx-stroke: accent-color;
+}
+
+.lineChart .chart-series-line {
+    -fx-stroke: accent-color;
+    -fx-effect: null;
+}
+.lineChart .axis-label {
+    -fx-text-fill: on-primary-color;
+}
+
+.lineChart .chart-legend-item{
+    -fx-text-fill: on-primary-color;
+}
+
+.lineChart .chart-line-symbol{
+    -fx-background-color: accent-color, primary-color;
+}
+
+.lineChart .chart-content {
+    -fx-text-fill: on-primary-color;
+}
+
+.lineChart .chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+.lineChart .chart-vertical-grid-lines {
+    -fx-stroke: background-color;
+}
+
+.lineChart .chart-horizontal-grid-lines {
+    -fx-stroke: background-color;
+}
+
+.lineChart .chart-alternative-row-fill {
+    -fx-fill:transparent;
+    -fx-stroke: transparent;
+}
+
+.lineChart .lineChartAxis{
+    -fx-tick-label-fill: on-primary-color-light;
+}
+
+.configButton {
+    -fx-background-color: primary-color;
+    -fx-text-fill: on-primary-color;
+    -fx-alignment: center-left;
+}
+
+.configButton: hover{
+    -fx-background-color: hover-color;
+}
+
+.applyButton {
+    -fx-background-color: primary-color;
+    -fx-text-fill: on-primary-color;
+    -fx-alignment: center-left;
+    -fx-border-color: white;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.applyButton: hover{
+    -fx-background-color: hover-color;
+}
